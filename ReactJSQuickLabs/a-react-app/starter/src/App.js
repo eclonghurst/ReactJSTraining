@@ -1,11 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import MyComponent from './MyComponent';
+import AnotherComponent from './AnotherComponent';
 
 function App() {
   return (
-    <>
-    <h1>Hi</h1>
-    </>
+    <div>
+    <MyComponent/>
+    </div>
   );
 }
 
