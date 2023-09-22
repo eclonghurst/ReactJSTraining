@@ -4,14 +4,16 @@ import 'bootstrap';
 import 'popper.js';
 import 'jquery';
 import './Components/css/qa.css';
+import Header from './Header';
+import Footer from './Footer';
 
 function App() {
   return (
     <div className="container">
       <div className="container">
-        <h1>
-          Other UIs to go here
-        </h1>
+        <Header/>
+        <h1>Other UIs to go here</h1>
+        <Footer/>
       </div>
     </div>
   );
