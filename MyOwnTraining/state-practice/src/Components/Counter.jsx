@@ -1,23 +1,40 @@
 import { useState } from "react";
 
 function Counter() {
-    // Create state using the useState hook
-    let [count, setCount] = useState(99);
-
-    const handleClick = () => {
-        // count++; HAVE TO USE THE SETTER
-        setCount(count + 1); // changes count and re-renders
-        // console.log("Count:", count);
+    let [count, setCount] = useState(0);
+    
+    const handleClick = (e) => {
+        if (e.target.innerText == '-5') {setCount(count - 5)}
+        if (e.target.innerText == '-1') {setCount(count + -1)}
+        if (e.target.innerText == 'RESET') {setCount(count = 0)}
+        if (e.target.innerText == '+1') {setCount(count + 1)}
+        if (e.target.innerText == '+5') {setCount(count + 5)}
     }
+
+    const handleMinusFive = () => {
+        setCount(count - 5);
+    }
+    const handleMinusOne = () => {
+        setCount(count - 1);
+    }
+    const handlePlusOne = () => {
+        setCount(count + 1);
+    }
+    const handleReset= () => {
+        setCount(count = 0);
+    }
+    const handlePlusFive = () => {
+        setCount(count + 5);
+    }
+
     return ( <>
         <input type="number" value={count} readOnly/>
         <br />
-        <button>-5</button>
-        <button>-1</button>
-        <button>RESET</button>
-        {/* DON'T include the () after handleClick */}
+        <button onClick={handleClick}>-5</button>
+        <button onClick={handleClick}>-1</button>
+        <button onClick={handleClick}>RESET</button>
         <button onClick={handleClick}>+1</button>
-        <button>+5</button>
+        <button onClick={handleClick}>+5</button>
     </> );
 }
 
