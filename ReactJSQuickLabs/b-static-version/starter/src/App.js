@@ -8,6 +8,7 @@ import './Components/css/qa.css';
 import Header from './Header';
 import Footer from './Footer';
 import AllTodos from './Components/AllTodos';
+import AddEditTodo from './Components/AddEditTodo';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Header/>
         <div className='container'>
           <AllTodos/>
+          <AddEditTodo/>
         </div>
         <Footer/>
       </div>
