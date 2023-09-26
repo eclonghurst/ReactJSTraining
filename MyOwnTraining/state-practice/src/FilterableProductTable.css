@@ -4,3 +4,19 @@
     align-items: center;
     justify-content: center;
 }
+
+.filterTable {
+    margin: 10px;
+    border: 2px solid rgb(249, 162, 206);
+    padding: 10px;
+}
+
+th, td {
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(251, 223, 228);
+}
+
+th {
+    background-color: pink;
+    padding: 5px 50px 10px 50px;
+}

@@ -1,15 +1,14 @@
 import { useState } from "react";
 import productData from "../products.json";
 import "../FilterableProductTable.css"
+import "./SearchBar";
+import SearchBar from "./SearchBar";
+
 function FilterableProductTable() {
 
     // SEARCH
     const [searchContent, setSearchContent] = useState('');
     const [checkedBox, setCheckedBox] = useState(false);
-
-    const handleInput = (event) => {
-            setSearchContent(event.target.value);
-    }
 
     // TABLE
 
@@ -57,12 +56,8 @@ function FilterableProductTable() {
 
     return (<>
     <div className="container">
-        <h2>Product Table</h2>
-        <input onChange={handleInput} value={searchContent} placeholder="Search..." />
-        <br />
-        <input type="checkbox" id="inStock" />
-        <label htmlFor="inStock">Only show products in stock</label>
-        <table style={{ margin: "auto" }}>
+        <SearchBar search={searchContent} handleChange={(event) => setSearchContent(event.target.value)}/>
+        <table className="filterTable">
             <thead>
                 <tr>
                     <th>Name</th>

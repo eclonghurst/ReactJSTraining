@@ -1,62 +1,25 @@
-// import React, { useState } from 'react'
-// import stockData from "./stock.json";
+import { useState } from "react";
+import productData from "../products.json";
+import "../FilterableProductTable.css"
+import React from 'react'
+import PropTypes from "prop-types";
 
-// function SearchBar() {
-
-// // SEARCH BAR
-
-// const [searchContent, setSearchContent] = useState('');
-// const [checkedBox, setCheckedBox] = useState(false);
-
-// const [searchedStock, setSearchedStock] = useState([]);
-
-// const handleInput = (event) => {
-//     const searchValue = event.target.value;
-//     setSearchContent(searchValue);
-
-//     // const filteredStock = stockList.filter((searchContent) => searchContent.toLowerCase().includes(searchValue.toLowerCase()));
-//     // setSearchedStock(filteredStock);
-// }
-
-// const handleCheckBox = (event) => {
-//     setCheckedBox(!checkedBox) 
-// }
-
-// const stockList = {};
-
-// const tableData = [];
-
-// for (let category in formattedStockList) {
-//     tableData.push(
-//         <tr>
-//             <th colSpan={2}>
-//                 {category}
-//             </th>
-//         </tr>
-//     )
-//     for (let product of formattedStockList[category]){
-
-//     }
-// }
+SearchBar.propTypes = {
+    handleChange: PropTypes.func.isRequired,
+    search: PropTypes.string.isRequired,
+}
 
 
-//   return (
-//     <>
-//     <input onChange={handleInput} type="text" value={searchContent} placeholder='Search...'/>
-//     <p><input onChange= {handleCheckBox} type="checkbox" name="" id="" />Only show products in stock</p>
-//     <table>
-//         <thead>
-//         <tr>
-//             <th>Name</th>
-//             <th>Price</th>
-//         </tr>
-//         </thead>
-//         <tbody>
-//         {tableData}
-//         </tbody>
-//     </table>
-//     </>
-//   )
-// }
+function SearchBar(props) {
 
-// export default SearchBar
+  return (
+    <>
+    <h2>Product Table</h2>
+        <input onChange={props.handleChange} value={props.searchContent} placeholder="Search..." />
+        <br />
+        <label htmlFor="inStock">Only show products in stock <input type="checkbox" id="inStock" /></label>
+    </>
+  )
+}
+
+export default SearchBar;
