@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 function InputWriter() {
 
     const [userInput, setUserInput] = useState('');
-    let content = '';
+
 
     const handleInput = (event) => {
-        setUserInput(userInput + event.target.value);
+        setUserInput(event.target.value);
     }
 
   return (
     <>
-    <input type="text" value={content} placeholder='Type here' onChange={handleInput}/>
+    <input type="text" value={userInput} placeholder='Type here' onChange={handleInput}/>
     <p>{userInput}</p>
     </>
   )
