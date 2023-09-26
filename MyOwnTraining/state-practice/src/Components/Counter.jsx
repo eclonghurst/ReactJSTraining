@@ -11,22 +11,6 @@ function Counter() {
         if (e.target.innerText == '+5') {setCount(count + 5)}
     }
 
-    const handleMinusFive = () => {
-        setCount(count - 5);
-    }
-    const handleMinusOne = () => {
-        setCount(count - 1);
-    }
-    const handlePlusOne = () => {
-        setCount(count + 1);
-    }
-    const handleReset= () => {
-        setCount(count = 0);
-    }
-    const handlePlusFive = () => {
-        setCount(count + 5);
-    }
-
     return ( <>
         <input type="number" value={count} readOnly/>
         <br />
