@@ -1,17 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from "prop-types";
+import axios from "axios";
 import productData from '../products.json';
-import SearchBar from './SearchBar';
+import FilterableProductTable from './FilterableProductTable';
 
 function StaticData(props) {
 
-    StaticData.propTypes = {
-        search: PropTypes.string.isRequired,
-    }
+    const [products, setProducts] = useState([]);
+    
+    useEffect(function() {
+        axios.get("http://localhost:4494/products").then(function (response){
+            setProducts(response.data)
+        }).catch(err => console.error(err));
+    }, []);
 
     const formattedProducts = {};
 
-    for (let product of productData.products) {
+    for (let product of products) {
         // checks if category already exists in that object
         if (formattedProducts[product.category] === undefined) {
             // assigns a new array to that category  
@@ -66,6 +71,11 @@ function StaticData(props) {
         </table>
     </>
   )
+}
+
+StaticData.propTypes = {
+    search: PropTypes.string.isRequired,
+    // handleChange: PropTypes.func.isRequired,
 }
 
 export default StaticData;
