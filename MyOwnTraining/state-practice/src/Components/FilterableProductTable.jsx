@@ -15,7 +15,7 @@ function FilterableProductTable() {
     <div className="container">
         <SearchBar search={searchContent} handleChange={(event) => setSearchContent(event.target.value)}/>
         <StaticData search={searchContent}/>
-        </div>
+    </div>
     );
 }
 
