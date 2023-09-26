@@ -1,5 +1,4 @@
 import { useState } from "react";
-import productData from "../products.json";
 import "../FilterableProductTable.css"
 import "./SearchBar";
 import SearchBar from "./SearchBar";
@@ -9,7 +8,7 @@ function FilterableProductTable() {
 
     // SEARCH
     const [searchContent, setSearchContent] = useState('');
-    const [checkedBox, setCheckedBox] = useState(false);
+    // const [checkedBox, setCheckedBox] = useState(false);
 
     return (
     <div className="container">
