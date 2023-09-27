@@ -20,3 +20,22 @@ th {
     background-color: pink;
     padding: 5px 50px 10px 50px;
 }
+
+.productForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input, label {
+    padding: 4px;
+}
+
+.submitProductButton {
+   margin-top: 10px;
+   background-color: rgb(255, 174, 188);
+   border: rgb(255, 110, 137);
+   border-radius: 10%;
+   color: white;
+}
