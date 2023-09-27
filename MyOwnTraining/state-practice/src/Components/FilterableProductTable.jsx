@@ -4,6 +4,7 @@ import "./SearchBar";
 import SearchBar from "./SearchBar";
 import StaticData from "./StaticData";
 import ProductForm from "./ProductForm";
+import { useNavigate } from "react-router-dom";
 
 function FilterableProductTable() {
 
@@ -15,7 +16,6 @@ function FilterableProductTable() {
     <div className="container">
         <SearchBar search={searchContent} handleChange={(event) => setSearchContent(event.target.value)}/>
         <StaticData search={searchContent}/>
-        <ProductForm/>
     </div>
     );
 }

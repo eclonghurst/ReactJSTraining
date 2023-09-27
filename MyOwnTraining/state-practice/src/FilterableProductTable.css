@@ -39,3 +39,16 @@ input, label {
    border-radius: 10%;
    color: white;
 }
+
+#productName, #productPrice, #productCategory{
+    background-color: rgb(255, 220, 225);
+    border: 2px solid rgb(255, 166, 166);
+}
+
+.productDetailsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}

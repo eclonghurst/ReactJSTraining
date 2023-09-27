@@ -4,10 +4,12 @@ import axios from "axios";
 // uncommented this will use the static json file not the post request
 // import productData from '../products.json';
 import FilterableProductTable from './FilterableProductTable';
+import { useNavigate } from 'react-router-dom';
 
 function StaticData(props) {
 
     const [products, setProducts] = useState([]);
+    const nav = useNavigate();
     
     useEffect(function() {
         axios.get("http://localhost:4494/products").then(function (response){
@@ -44,7 +46,7 @@ function StaticData(props) {
             if (!product.name.toLowerCase().includes(props.search.toLowerCase())){continue}
             else {
             tableData.push(
-                <tr>
+                <tr onClick={() => nav("/product/" + product.id)}>
                     <td>
                         {product.name}
                     </td>
@@ -76,6 +78,12 @@ function StaticData(props) {
 
 StaticData.propTypes = {
     search: PropTypes.string.isRequired,
+    products: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string,
+        price: PropTypes.number,
+        category: PropTypes.string
+    }))
     // handleChange: PropTypes.func.isRequired,
 }
 
