@@ -22,7 +22,6 @@ function ProductForm(props) {
             setCategory("");
             props.getProducts();
         }).catch(err => console.error(err))
-
     }
 
   return (

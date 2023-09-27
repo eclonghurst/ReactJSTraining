@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from "prop-types";
 import axios from "axios";
-import productData from '../products.json';
+// uncommented this will use the static json file not the post request
+// import productData from '../products.json';
 import FilterableProductTable from './FilterableProductTable';
 
 function StaticData(props) {

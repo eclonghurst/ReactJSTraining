@@ -47,6 +47,12 @@
       "price": 0,
       "category": "Electronics",
       "id": 8
+    },
+    {
+      "name": "Tennis Ball",
+      "price": "12",
+      "category": "Sporting Goods",
+      "id": 9
     }
   ]
 }
